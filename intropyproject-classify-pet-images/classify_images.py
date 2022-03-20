@@ -65,7 +65,6 @@ def classify_images(images_dir, results_dic, model):
      Returns:
            None - results_dic is mutable data type so no return needed.
     """
-    print(results_dic)
     
     # Process all files in the results_dic - use images_dir to give fullpath
     # that indicates the folder and the filename (key) to be used in the
@@ -119,5 +118,3 @@ def classify_images(images_dir, results_dic, model):
        # the extend function
        else:
            results_dic[key].extend([model_label, 0])
-        
-       print(results_dic[key])

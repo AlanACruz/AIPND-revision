@@ -73,8 +73,6 @@ def get_pet_labels(image_dir):
            pet_label = re.sub("[^a-zA-Z\s]+", "", pet_label)
            pet_label = pet_label.lower().strip()
 
-           print(pet_label)
-
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates
            # duplicate files (filenames)
