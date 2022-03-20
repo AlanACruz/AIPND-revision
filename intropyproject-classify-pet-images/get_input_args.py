@@ -38,22 +38,6 @@ def get_input_args():
     Returns:
      parse_args() -data structure that stores the command line arguments object
     """
-    
-    parser = argparse.ArgumentParser()
-
-    parser.add_argument('--dir',
-                        type=str,
-                        default='pet_images/',
-                        help='path to folder of images')
-                        
-    parser.add_argument('--arch',
-                        type=str,
-                        default = 'vgg',
-                        help='the CNN model architecture')
-                        
-    parser.add_argument('--dogfile',
-                        type=str,
-                        default = 'dognames.txt',
-                        help='text file of names of dog breads')
-                        
-    return parser.parse_args()
+    # Replace None with parser.parse_args() parsed argument collection that
+    # you created with this function
+    return None
