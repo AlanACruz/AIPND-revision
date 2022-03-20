@@ -69,14 +69,17 @@ def get_pet_labels(image_dir):
            #          extracted dog breed name in the variable pet_label
            #          that's created as an empty string ABOVE
            pet_label = in_files[idx].replace(".jpg", "")
-           pet_label = re.sub("[^0-9a-zA-Z\s]+", "", pet_label)
-           pet_label = pet_label.strip()
+           pet_label = pet_label.replace("_", " ")
+           pet_label = re.sub("[^a-zA-Z\s]+", "", pet_label)
+           pet_label = pet_label.lower().strip()
+
+           print(pet_label)
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates
            # duplicate files (filenames)
            if in_files[idx] not in results_dic:
-              results_dic[in_files[idx]] = pet_label
+              results_dic[in_files[idx]] = [pet_label]
               
            else:
                print("** Warning: Duplicate files exist in directory:",
