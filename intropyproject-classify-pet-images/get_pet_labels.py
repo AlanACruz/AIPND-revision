@@ -18,6 +18,7 @@
 ##
 # Imports python modules
 from os import listdir
+import re
 
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create
@@ -67,13 +68,15 @@ def get_pet_labels(image_dir):
            #          accessed by in_files[idx]. Be certain to place the
            #          extracted dog breed name in the variable pet_label
            #          that's created as an empty string ABOVE
-           pet_label = in_files[idx]
+           pet_label = in_files[idx].replace(".jpg", "")
+           pet_label = re.sub("[^0-9a-zA-Z\s]+", "", pet_label)
+           pet_label = pet_label.strip()
 
            # If filename doesn't already exist in dictionary add it and it's
            # pet label - otherwise print an error message because indicates
            # duplicate files (filenames)
            if in_files[idx] not in results_dic:
-              results_dic[in_files[idx]] = [pet_label]
+              results_dic[in_files[idx]] = pet_label
               
            else:
                print("** Warning: Duplicate files exist in directory:",
